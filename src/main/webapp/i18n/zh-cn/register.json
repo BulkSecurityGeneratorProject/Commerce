@@ -1,0 +1,24 @@
+{
+    "register": {
+        "title": "注册",
+        "form": {
+            "button": "注册"
+        },
+        "messages": {
+            "validate": {
+                "login": {
+                    "required": "您须要登录。",
+                    "minlength": "用户名须大于1个字符。",
+                    "maxlength": "用户名须小于50个字符。",
+                    "pattern": "您的用户名只能包含小写字母和数字。"
+                }
+            },
+            "success": "<strong>注册成功!</strong>请查收邮件确认。",
+            "error": {
+                "fail": "<strong>注册失败!</strong>请稍后再试！",
+                "userexists": "<strong>用户名已经存在！</strong>",
+                "emailexists": "<strong>邮箱已被占用！</strong>"
+            }
+        }
+    }
+}

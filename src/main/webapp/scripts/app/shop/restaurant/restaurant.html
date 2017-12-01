@@ -1,0 +1,58 @@
+<main ng-controller="navController">
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid">
+                <div class="hamburgerBar" ng-controller="HamburgerBar" ng-class="$root.navState" bigeater-sticky>
+                    <div class="hamburgerButton">
+                        <a class=""  bigeater-burger>
+                            <span class="glyphicon glyphicon-align-justify"></span>
+                        </a>
+                    </div>
+                    <div ng-class="">
+                        <ul class="navListOptions">
+                            <li ng-class="(nav.url.indexOf('/product') != -1) ? 'active':''">
+                                <a class="subNavIcon" ng-click="changeNavItem('scripts/app/shop/restaurant/product.html')">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    <span translate="restaurant.products.products" class="min">Products</span>
+                                </a>
+                            </li>
+                            <li ng-class="(nav.url.indexOf('/user') != -1) ? 'active':''">
+                                <a class="subNavIcon" ng-click="changeNavItem('scripts/app/shop/restaurant/user.html')">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <span translate="restaurant.users.users" class="min">User</span>
+                                </a>
+                            </li>
+                            <li ng-class="(nav.url.indexOf('/order') != -1) ? 'active':''">
+                                <a class="subNavIcon active" ng-click="changeNavItem('scripts/app/shop/restaurant/order.html')">
+                                    <span class="glyphicon glyphicon-euro"></span>
+                                    <span translate="restaurant.orders.orders" class="min">Orders</span>
+                                </a>
+                            </li>
+                            <li ng-class="(nav.url.indexOf('/comment') != -1) ? 'active':''">
+                                <a class="subNavIcon" ng-click="changeNavItem('scripts/app/shop/restaurant/comment.html')">
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                    <span translate="restaurant.comments.comments" class="min">Comments</span>
+                                </a>
+                            </li>
+                            <!--
+                            <li ng-class="(nav.url.indexOf('/authority') != -1) ? 'active':''">
+                                <a class="subNavIcon" ng-click="changeNavItem('/public/views/authorityModule/authority.html')">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                    <span class="min">Authority</span>
+                                </a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="view" ng-class="$root.navState">
+                    <ng-include src="nav.url">
+
+                    </ng-include>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>

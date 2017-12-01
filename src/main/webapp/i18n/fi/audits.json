@@ -1,0 +1,27 @@
+{
+    "audits": {
+        "title": "Tarkastuksia",
+        "filter": {
+            "title": "Suodata päivämäärän",
+            "from": "alkaen",
+            "to": "että",
+            "button": {
+                "weeks": "Viikkoa",
+                "today": "tänään",
+                "clear": "kirkas",
+                "close": "lähellä"
+            }
+        },
+        "table": {
+            "header": {
+                "principal": "Käyttäjä",
+                "date": "Päivämäärä",
+                "status": "Valtio",
+                "data": "Ylimääräinen tiedot"
+            },
+            "data": {
+                "remoteAddress": "Kauko Osoite:"
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "health": {
+        "title": "Terveystarkastukset",
+        "refresh.button": "Virkistää",
+        "stacktrace": "Kutsupinon",
+        "details": {
+            "details": "Tarkemmat tiedot",
+            "properties": "Ominaisuudet",
+            "name": "Nimi",
+            "value": "Arvo",
+            "error": "Virhe"
+        },
+        "indicator": {
+            "diskSpace": "Levytilaa",
+            "mail": "Sähköposti",
+            "db": "Tietokanta"
+        },
+        "table": {
+            "service": "Palvelun nimi",
+            "status": "Tila"
+        },
+        "status": {
+            "UP": "Ylös",
+            "DOWN": "Alas"
+        }
+    }
+}

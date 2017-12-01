@@ -1,0 +1,21 @@
+{
+    "login": {
+        "title": "Aitouden",
+        "form": {
+            "password": "Salasana",
+            "password.placeholder": "Salasana",
+            "rememberme": "Automaattinen Kirjaudu",
+            "button": "Aitouden"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>Todennus epäonnistui!</strong> Tarkista valtakirjojen ja yritä uudelleen."
+            }
+        },
+        "password" : {
+            "forgot": "Unohtuiko salasana?"
+        }
+    }
+}
+
+

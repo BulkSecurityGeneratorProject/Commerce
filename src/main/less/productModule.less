@@ -1,0 +1,170 @@
+/*****************/
+/* HamburgerBar  */
+/*****************/
+.hamburgerBar {
+    position: absolute;
+    z-index: 500;
+    border: 1px solid #666666;
+    overflow: hidden;
+}
+.hamburgerButton {
+    font-size: 30px;
+    text-align: right;
+    margin-right: 10px;
+}
+.hamburgerButton a,
+.hamburgerButton a:hover{
+    color: @cGrey1;
+}
+.navListOptions {
+    margin-top: @sp05;
+    background:@cGrey1;
+    li {
+        border-bottom: 1px solid @cGrey2;
+        height: 50px;
+        &:hover, &:visited:hover{
+            background:@cActive;
+        }
+        &.active, &.active:hover {
+            background:@cActive;
+        }
+    }
+}
+
+.subNavIcon {
+    color:@cBigEaterBlack;
+    span {
+        padding: @sp05 0;
+        padding-left: @sp05;
+        float: left;
+        font-size: 25px;
+        color: white;
+        &.min {
+            height: @sp2;
+            font-size: 18px;
+            overflow: hidden;
+        }
+    }
+    p {
+        display: block;
+        padding-left: @sp05;
+        padding-top: @sp05;
+    }
+}
+
+.hamburgerBar.open {
+    width: 250px;
+}
+.hamburgerBar.closed {
+    width: 50px;
+}
+.hamburgerBar.closed .min {
+    display: none !important;
+}
+
+/* main content */
+.view {
+    padding: 48px 60px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    border: 3px solid #cccccc;
+}
+.view.open  {
+    margin-left: 260px;
+    width: ~"calc(100% - 260px)";
+}
+.view.closed  {
+    margin-left: 60px;
+    width: ~"calc(100% - 60px)";
+}
+
+/*product page*/
+
+.btn_typeAdd {
+    font-size: 30px;
+}
+.btn_productAdd {
+    font-size: 30px;
+}
+.productFormHolder {
+    overflow: hidden;
+    width: 100%;
+}
+.sectionProductList {
+    margin: 12.5px 0;
+    border-top: 4px solid #cccccc;
+    word-wrap: break-word;
+}
+.sectionProductList li {
+    border-bottom: 1px solid #cccccc;
+    display: block;
+    zoom: 1;
+}
+
+/*product brand*/
+.brandContainer {
+    padding: 10px;
+    background: #F8FAFF;
+}
+.brandContainer .brandTitleInfo li {
+    color: #438EB9;
+    font-size: 11px;
+    border: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+.updateBrand {
+    margin: 20px 30px;
+}
+.brandFormHolder {
+    overflow: hidden;
+    width: 100%;
+}
+.brandImg img {
+    height: 50px;
+}
+
+/*product info*/
+.productContainer {
+    padding: 10px;
+    background: #F8FAFF;
+}
+.productContainer .productTitle {
+    display: block;
+    font-size: 16px;
+}
+.productContainer .productTitleInfo li {
+    font-size: 11px;
+    border: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+.productContainer span {
+    color: #438EB9;
+}
+.updateProduct {
+    margin: 20px 30px;
+}
+.actions {
+    margin: 25px 0;
+}
+
+/*product style*/
+.styleContainer {
+    padding: 10px;
+    background: #F8FAFF;
+}
+.styleContainer .styleTitleInfo li {
+    color: #438EB9;
+    font-size: 11px;
+    border: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+.updateStyle {
+    margin: 20px 30px;
+}
+.styleFormHolder {
+    overflow: hidden;
+    width: 100%;
+}

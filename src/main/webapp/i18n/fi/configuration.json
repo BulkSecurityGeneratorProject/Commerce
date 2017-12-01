@@ -1,0 +1,10 @@
+{
+    "configuration": {
+        "title": "Kokoonpano",
+        "filter": "Suodatin (etuliitteellä)",
+        "table": {
+            "prefix": "Etuliite",
+            "properties": "Ominaisuudet"
+        }
+    }
+}

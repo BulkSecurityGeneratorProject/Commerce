@@ -1,0 +1,27 @@
+{
+    "health": {
+        "title": "健康检查",
+        "refresh.button": "刷新",
+        "stacktrace": "堆追踪",
+        "details": {
+            "details": "细节",
+            "properties": "属性",
+            "name": "名字",
+            "value": "值",
+            "error": "错误"
+        },
+        "indicator": {
+            "diskSpace": "磁盘空间",
+            "mail": "邮箱",
+            "db": "数据库"
+        },
+        "table": {
+            "service": "服务名字",
+            "status": "状态"
+        },
+        "status": {
+            "UP": "UP",
+            "DOWN": "DOWN"
+        }
+    }
+}

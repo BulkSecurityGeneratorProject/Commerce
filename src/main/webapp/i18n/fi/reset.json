@@ -1,0 +1,30 @@
+{
+    "reset": {
+        "request": {
+            "title": "Nollaa salasana",
+            "form": {
+                "button": "Nollaa salasana"
+            },
+            "messages": {
+                "info": "Anna sähköpostiosoite, jota käytit rekisteröintiin",
+                "success": "Tarkista sähköpostit lisätietoja siitä, miten uuden salasanan.",
+                "notfound": "<strong>Sähköpostiosoite ei ole rekisteröity!</strong> Tarkista ja yritä uudelleen"
+
+            }
+
+        },
+        "finish" : {
+            "title": "Nollaa salasana",
+            "form": {
+                "button": "Vahvista uusi salasana"
+            },
+            "messages": {
+                "info": "Valitse uusi salasana",
+                "success": "<strong>Salasanasi on palautettu.</strong> Haluta <a href=\"#/login\">todentaa</a>.",
+                "keymissing": "Nollaus-näppäintä puuttuu.",
+                "error": "Salasanasi ei voitu palauttaa. Muista salasana pyyntö on vain voimassa 24 tuntia."
+            }
+        }
+    }
+
+}

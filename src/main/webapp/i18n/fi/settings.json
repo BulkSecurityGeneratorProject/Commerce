@@ -1,0 +1,32 @@
+{
+    "settings": {
+        "title": "käyttäjän asetukset [<b>{{username}}</b>]",
+        "form": {
+            "firstname": "Etunimi",
+            "firstname.placeholder": "Etunimi",
+            "lastname": "Sukunimi",
+            "lastname.placeholder": "Sukunimi",
+            "language": "kieli",
+            "button": "Tallenna"
+        },
+        "messages": {
+            "error": {
+                "fail": "<strong>Tapahtui virhe!</strong> Asetukset ei voitu tallentaa.",
+                "emailexists": "<strong>Sähköposti on jo käytössä!</strong>."
+            },
+            "success": "<strong>Asetukset tallennettu!</strong>",
+            "validate": {
+                "firstname": {
+                    "required": "Ensimmäinen nimi on pakollinen.",
+                    "minlength": "Etunimesi on oltava vähintään 1 merkki",
+                    "maxlength": "Ensimmäinen nimi ei voi olla pidempi kuin 50 merkkiä"
+                },
+                "lastname": {
+                    "required": "Sukunimesi vaaditaan.",
+                    "minlength": "Sukunimesi on oltava vähintään 1 merkki",
+                    "maxlength": "Sukunimesi ei voi olla pidempi kuin 50 merkkiä"
+                }
+            }
+        }
+    }
+}

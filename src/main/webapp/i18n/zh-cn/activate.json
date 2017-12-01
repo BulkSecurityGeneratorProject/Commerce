@@ -1,0 +1,9 @@
+{
+    "activate": {
+        "title": "激活",
+        "messages": {
+            "success": "<strong>您的账户已被激活。</strong> 请 <a href=\"#/login\">鉴定</a>.",
+            "error": "<strong>您的账户无法被激活。</strong> 请使用注册表单登陆。"
+        }
+    }
+}

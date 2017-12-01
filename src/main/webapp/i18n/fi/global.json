@@ -1,0 +1,117 @@
+{
+    "global": {
+        "title": "BigEater",
+        "browsehappy": "Käytät <strong>vanhentunut</strong> selain. Haluta <a href=\"http://browsehappy.com/?locale=en\">päivitä selaimesi</a> parantaa kokemus.",
+        "menu": {
+            "home": "Koti",
+            "entities": {
+                "main": "Yhteisöt",
+                "additionalEntity": "Big Eater will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "Tili",
+                "settings": "Asetukset",
+                "password": "Salasana",
+                "sessions": "Istunto",
+                "login": "Aitouden",
+                "logout": "Kirjautua ulos",
+                "register": "Rekisteröidy"
+            },
+            "admin": {
+                "main": "Hallinto",
+                "tracker": "käyttäjän seuraaja",
+                "metrics": "Metrinen",
+                "health": "Terveys",
+                "configuration": "Kokoonpano",
+                "logs": "Lokit",
+                "audits": "Tarkastuksia",
+                "apidocs": "API",
+                "database": "Tietokanta"
+            },
+            "shop": {
+                "main": "Myymälä",
+                "group": "Ryhmä",
+                "shopinfo": "Myymälä",
+                "restaurant": "Ravintalo"
+            },
+            "language": "Kieli"
+        },
+        "form": {
+            "username": "Käyttäjätunnus",
+            "username.placeholder": "Käyttäjätunnus",
+            "newpassword": "Salasana",
+            "newpassword.placeholder": "Salasana",
+            "confirmpassword": "Salasanan vahvistus",
+            "confirmpassword.placeholder": "Salasanan vahvistus",
+            "email": "Sähköposti",
+            "email.placeholder": "Sähköposti"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "Jos haluat <a href=\"#/login\">todentaa</a>, voit kokeilla oletuksena tilit:<br/>- Hallintomies (käyttäjätunnus=\"admin\" ja salasana=\"admin\") <br/>- Käyttäjä (käyttäjätunnus=\"user\" ja salasana=\"user\").",
+                "register": "Sinulla ei ole vielä tiliä? <a href=\"#/register\">Rekisteröi uusi tili</a>"
+            },
+            "error": {
+                "dontmatch" : "Salasana ja sen vahvistus eivät täsmää!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "Vaaditaan salasana.",
+                    "minlength": "Salasanasi on oltava vähintään 5 merkkiä.",
+                    "maxlength": "Salasanasi ei voi olla pidempi kuin 50 merkkiä.",
+                    "strength": "Salasanan vahvuus:"
+                },
+                "confirmpassword": {
+                    "required": "Vahvistusta tarvitaan salasana.",
+                    "minlength": "Vahvistusta salasana vaaditaan vähintään 5 merkkiä.",
+                    "maxlength": "Vahvistusta salasana voi olla enintään 50 merkkiä."
+                },
+                "email": {
+                    "required": "Sähköpostisi tarvitaan.",
+                    "invalid": "Sähköpostisi ei kelpaa.",
+                    "minlength": "Sähköpostisi on oltava vähintään 5 merkkiä.",
+                    "maxlength": "Sähköpostin voi olla enintään 50 merkkiä."
+                }
+            }
+        },
+        "field": {
+            "id" : "ID"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Lisää möykky",
+            "addimage": "Lisää kuva",
+            "back": "Takaisin",
+            "cancel": "Peruuttaa",
+            "delete": "Poistaa",
+            "edit": "Muokata",
+            "save": "Tallenna",
+            "view": "Näkymä"
+        },
+        "detail": {
+            "field": "Kenttä",
+            "value": "Arvo"
+        },
+        "delete": {
+            "title": "Vahvista poistotoiminnon"
+        },
+        "validation": {
+            "required": "Tämä kenttä pitää täyttää.",
+            "minlength": "Tämä kenttä on oltava vähintään {{min}} merkkiä.",
+            "maxlength": "This field cannot be longer than {{max}} merkkiä.",
+            "min": "Tämä kenttä ei voi olla pidempi kuin {{min}}.",
+            "max": "Tämä kenttä ei voi olla enemmän kuin {{max}}.",
+            "minbytes": "Tämä kenttä pitäisi olla enemmän kuin {{min}} tavua.",
+            "maxbytes": "Tämä kenttä ei voi olla enemmän kuin {{max}} tavua.",
+            "pattern": "Tämä kenttä olisi noudatettava mallia {{pattern}}.",
+            "number": "Tämä kenttä pitäisi olla numero.",
+            "datetimelocal": "Tämä kenttä pitäisi olla päivämäärä ja kellonaika."
+        }
+    },
+    "error" : {
+        "serverNotReachable" : "Palvelin ei tavoitettavissa",
+        "NotNull" : "Kenttä {{fieldName}} ei voi olla tyhjä!"
+    },
+    "footer": "Tämä on alatunniste"
+}

@@ -1,0 +1,528 @@
+<section class="main" ng-controller="bigeaterProductLanding">
+    <h4 class="sectionHead" bigeater-head-collapse="headCollapseState" head-collapse-state="true">
+        <span translate="restaurant.products.categories">Categories</span>
+        <a class="fr" ng-click="headCollapseState = !headCollapseState" ng-class="(headCollapseState == false) ? '' : ''">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+    </h4>
+    <div class="sectionControl">
+        <div bigeater-single-collapse state="isTypeCollapsed">
+            <a class="btn_typeAdd" ng-click="isTypeCollapsed = false" ng-class="(isTypeCollapsed == false) ? '' : ''">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+            </a>
+            <div class="crud Slide">
+                <form class="form-horizontal" ng-submit="createRootType(newType)" name="createNewType">
+                    <div class="form-group">
+                        <div>
+                            <label for="name" class="col-sm-3 control-label">Father Category</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="name" ng-model="newType.name" placeholder="Father category name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions clearfix">
+                        <button type="button" class="btn fr" ng-click="resetCreateForm()">Cancel</button>
+                        <button type="submit" class="btn fr">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="nodesControlAction clearfix">
+            <a href="" class="btn btn-default pull-right" ng-click="collapseAll()">Collapse all</a>
+            <a href="" class="btn btn-default pull-right" ng-click="expandAll()">Expand all</a>
+            <!--
+                <a href="" class="btn btn-default btn-warning pull-right" ng-click="moveLastToTheBegginig()">Move Last To The Beginning</a>
+             -->
+        </div>
+
+        <div>
+            <!-- Nested node template -->
+            <script type="text/ng-template" id="nodes_renderer.html">
+                <div ui-tree-handle class="tree-node tree-node-content" data-nodrag ng-show="!node.editing">
+                    <a class="btn btn-success btn-xs" data-nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span></a>
+                    {{node.name}}
+                    <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="deleteType(node)"><span class="glyphicon glyphicon-remove"></span></a>
+                    <a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="add(node)" style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
+                    <a class="btn btn-primary btn-xs pull-right" data-nodrag ng-click="edit(node)"><span class="glyphicon glyphicon-pencil"></span></a>
+                </div>
+                <div class="angular-ui-tree-handle" data-nodrag ng-show="node.editing">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="type name" ng-model="node.name">
+                        </div>
+                        <button type="submit" class="btn btn-default" ng-click="updateType(node)">Update</button>
+                        <button type="submit" class="btn btn-default" ng-click="cancelUpdatingType(node)">Cancel</button>
+                    </form>
+                </div>
+                <div class="angular-ui-tree-handle" data-nodrag ng-show="node.adding">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="child category name" ng-model="newNode.name">
+                        </div>
+                        <button type="submit" class="btn btn-default" ng-click="addType(newNode, node)">Add</button>
+                        <button type="submit" class="btn btn-default" ng-click="cancelAddingType(node)">Cancel</button>
+                    </form>
+                </div>
+                <ol ui-tree-nodes="" ng-model="node.childtypes" ng-class="{hidden: collapsed}">
+                    <li ng-repeat="node in node.childtypes" ui-tree-node ng-include="'nodes_renderer.html'" collapsed="true">
+                    </li>
+                </ol>
+            </script>
+        </div>
+        <div ui-tree id="tree-root">
+            <ol ui-tree-nodes="" ng-model="data">
+                <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'" collapsed="true"></li>
+            </ol>
+        </div>
+    </div>
+
+    <h4 class="sectionHead" bigeater-head-collapse="brandHeadCollapseState" head-collapse-state="true">
+        <span translate="restaurant.products.brands">Brands</span>
+        <a class="fr" ng-click="brandHeadCollapseState = !brandHeadCollapseState" ng-class="(brandHeadCollapseState == false) ? '' : ''">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+    </h4>
+    <div class="sectionControl">
+        <div bigeater-single-collapse state="isBrandCollapsed">
+            <a class="btn_typeAdd" ng-click="isBrandCollapsed = false" ng-class="(isBrandCollapsed == false) ? '' : ''">
+                <span class="glyphicon glyphicon-plus-sign"></span>
+            </a>
+            <div class="crud Slide">
+                <form class="form-horizontal" ng-submit="createBrand(newBrand)" name="createNewBrand">
+                    <div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-3 control-label">Brand Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="name" ng-model="newBrand.name" placeholder="Brand name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="logopath" class="col-sm-3 control-label">Brand Image</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="btn" name="logopath" ng-model="newBrand.logopath"  accept="image/*" ngf-select required >
+                                <img ng-show="newBrand.logopath[0] != null" ngf-src="newBrand.logopath[0]" class="thumb">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions clearfixer">
+                        <button type="button" class="btn fr" ng-click="resetCreateBrandForm()">Cancel</button>
+                        <button type="submit" class="btn fr">Add</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <pagination
+                    total-items="brandsobj.totalItems"
+                    items-per-page="brandsobj.itemsPerPage"
+                    ng-model="brandCurrentPage"
+                    max-size="maxSize"
+                    class="pagination-sm"
+                    boundary-links="true"
+                    rotate="false"
+                    num-pages="numPages"
+                    ng-change="brandPageChanged()">
+                </pagination>
+            </div>
+        </div>
+        <ul class="sectionProductList" bigeater-accordion>
+            <li
+                bigeater-accordion-item
+                ng-repeat="brand in brandsobj.brands"
+                ng-init="updatedBrand.id=brand.id; updatedBrand.name=brand.name; updatedBrand.visible=brand.visible; updatedBrand.logopath=brand.logopath"
+                ng-controller="bigeaterBrandItem"
+                >
+                <div class="brandContainer clearfix">
+                    <div class="fl">
+                        <ul class="brandTitleInfo">
+                            <li class="brandImg"><img src="{{brand.logopath}}"/></li>
+                            <li>Brand name : {{brand.name}}</li>
+                        </ul>
+                    </div>
+                    <div class="fr">
+                        <a class="actionicon" ng-click="loadItemForm()" ng-class="formOpen ? 'active' : ''">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </div>
+                </div>
+                <div ng-class="formDisplay()" class="brandFormHolder clearfix">
+                    <div class="updateBrand">
+                        <form class="form-horizontal" name="form.updateForm" ng-submit="editBrand(updatedBrand)">
+                            <div class="form-group">
+                                <label for="name" class="col-sm-3 control-label">Brand Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="name" ng-model="updatedBrand.name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="logopath" class="col-sm-3 control-label">Brand Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="btn" name="logopath" ng-model="updatedBrand.logopath"  accept="image/*" ngf-select required >
+                                    <img ng-show="updatedBrand.logopath[0] != null" ngf-src="updatedBrand.logopath[0]" class="thumb">
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button type="submit" class="btn">Update</button>
+                                <button type="button" class="btn" ng-click="resetItemForm(brand)">Cancel</button>
+                                <button type="button" class="btn" ng-click="deleteBrand(brand)">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <section class="clearfixer ProductContainerBox" ng-class="">
+        <h4>
+            <span translate="restaurant.products.products">Products</span>
+        </h4>
+        <div class="sectionControl">
+            <div bigeater-single-collapse state="isProductCollapsed">
+                <a class="btn_productAdd" ng-click="isProductCollapsed = false">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                </a>
+                <div class="crud Slide">
+                    <form ng-submit="createProduct(newProduct)" name="createNewProduct" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="name" ng-model="newProduct.name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="producttype" class="col-sm-2 control-label">Category</label>
+                            <div class="col-sm-4">
+                                <input type="hidden" ng-model="newProduct.producttype">
+                                <input id="producttype" type="text" ng-click="openCategoryModal('lg', null)" class="form-control" name="producttype" ng-model="newProduct.producttypevalue" readonly="readonly">
+                            </div>
+                            <script type="text/ng-template" id="productCategoryContent.html">
+                                <div class="modal-header">
+                                    <h3 class="modal-title">Product Categories</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div ui-tree id="tree-root">
+                                        <ol ui-tree-nodes="" ng-model="data">
+                                            <li ng-repeat="node in data" ui-tree-node ng-include="'categories.html'" collapsed="false"></li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                </div>
+                            </script>
+
+                            <script type="text/ng-template" id="categories.html">
+                                <div ui-tree-handle class="tree-node tree-node-content" data-nodrag>
+                                    <a class="btn btn-success btn-xs" data-nodrag ng-click="toggle(this)">
+                                        <span class="glyphicon" ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed}"></span>
+                                    </a>
+                                    <a ng-click="selectStyle(node)">{{node.name}}</a>
+                                </div>
+                                <ol ui-tree-nodes="" ng-model="node.childtypes" ng-class="{hidden: collapsed}">
+                                    <li ng-repeat="node in node.childtypes" ui-tree-node ng-include="'categories.html'" collapsed="false">
+                                    </li>
+                                </ol>
+                            </script>
+
+                            <label for="brand" class="col-sm-2 control-label">Brand</label>
+                            <div class="col-sm-4">
+                                <select name="brand" class="form-control" ng-model="newProduct.brand" ng-options="brand.id as brand.name for brand in allBrands">
+                                </select>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="form-group">
+                            <label for="styles" class="col-sm-2 control-label">Styles</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="styles" ng-model="newProduct.styles">
+                            </div>
+
+                            <label for="model" class="col-sm-2 control-label">Model</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="model" ng-model="newProduct.model">
+                            </div>
+                        </div>
+                         -->
+                        <div class="form-group">
+                            <label for="code" class="col-sm-2 control-label">Code</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="code" ng-model="newProduct.code" >
+                            </div>
+
+                            <label for="weight" class="col-sm-2 control-label">Weight</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="weight" ng-model="newProduct.weight">
+                            </div>
+
+                            <!--
+                            <label for="sexrequest" class="col-sm-2 control-label">Sex Request</label>
+                            <div class="col-sm-2">
+                                <select name="sexrequest" class="form-control" ng-model="newProduct.sexrequest">
+                                  </select>
+                            </div>
+                            -->
+                            <label for="model" class="col-sm-2 control-label">Model</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="model" ng-model="newProduct.model">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="baseprice" class="col-sm-2 control-label">Base Price</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="baseprice" ng-model="newProduct.baseprice">
+                            </div>
+
+                            <label for="marketprice" class="col-sm-2 control-label">Market Price</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="marketprice" ng-model="newProduct.marketprice">
+                            </div>
+
+                            <label for="sellprice" class="col-sm-2 control-label">Sell Price</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" name="sellprice" ng-model="newProduct.sellprice">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea bigeater-auto-expand class="form-control" ng-model="newProduct.description" placeholder=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="buyexplain" class="col-sm-2 control-label">Buy Explain</label>
+                            <div class="col-sm-10">
+                                <textarea bigeater-auto-expand class="form-control" ng-model="newProduct.buyexplain" placeholder=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button type="submit" class="btn">Add</button>
+                            <button type="button" class="btn fr" ng-click="resetCreateProductForm()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <pagination
+                        total-items="productsobj.totalItems"
+                        items-per-page="productsobj.itemsPerPage"
+                        ng-model="productCurrentPage"
+                        max-size="maxSize"
+                        class="pagination-sm"
+                        boundary-links="true"
+                        rotate="false"
+                        num-pages="numPages"
+                        ng-change="productPageChanged()">
+                    </pagination>
+                </div>
+            </div>
+
+            <ul class="sectionProductList" bigeater-accordion>
+                <li
+                    bigeater-accordion-item
+                    ng-repeat="product in productsobj.products"
+                    ng-init="updatedProduct.id=product.id; updatedProduct.code=product.code; updatedProduct.name=product.name; updatedProduct.brand=product.brand;
+							updatedProduct.model=product.model; updatedProduct.baseprice=product.baseprice; updatedProduct.marketprice=product.marketprice;
+							updatedProduct.sellprice=product.sellprice; updatedProduct.weight=product.weight; updatedProduct.description=product.description;
+							updatedProduct.buyexplain=product.buyexplain; updatedProduct.producttype=product.producttype;updatedProduct.visible=product.visible;
+							updatedProduct.commend=product.commend;"
+                    ng-controller="bigeaterProductItem"
+                    >
+                    <div class="productContainer clearfix">
+                        <div class="fl">
+                            <span class="productTitle">{{product.name}}</span>
+                            <ul class="productTitleInfo">
+                                <li>Category : {{product.producttype.name}}</li>
+                                <li>Brand : {{product.brand.name}}</li>
+                                <li>Sell Price : {{product.sellprice}}</li>
+
+                                <script type="text/ng-template" id="productStyleContent.html">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">Product Styles</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="sectionControl">
+                                            <div bigeater-single-collapse state="isStyleCollapsed">
+                                                <a class="btn_productAdd" ng-click="isStyleCollapsed = false">
+                                                    <span class="glyphicon glyphicon-plus-sign"></span>
+                                                </a>
+                                                <div class="crud Slide">
+                                                    <form ng-submit="createStyle(newStyle)" name="createNewStyle" class="form-horizontal">
+                                                        <div class="form-group">
+                                                            <label for="name" class="col-sm-2 control-label">Name</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control" name="name" ng-model="newStyle.name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="imagename" class="col-sm-2 control-label">Style Image</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="file" class="btn" name="imagename" ng-model="newStyle.imagename" accept="image/*" ngf-select required >
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <img ng-show="newStyle.imagename[0] != null" ngf-src="newStyle.imagename[0]" class="thumb">
+                                                            </div>
+                                                        </div>
+                                                        <div class="actions">
+                                                            <button type="submit" class="btn">Add</button>
+                                                            <button type="button" class="btn fr" ng-click="resetCreateStyleForm()">Cancel</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="sectionProductList" bigeater-accordion>
+                                            <li ng-repeat="style in stylesobj.styles"
+                                                bigeater-accordion-item
+                                                ng-init="updatedStyle.id=style.id;updatedStyle.name=style.name;updatedStyle.imagename=style.imagename;updatedStyle.visible=style.visible;"
+                                                ng-controller="bigeaterStyleItem">
+                                                <div class="styleContainer clearfix">
+                                                    <div class="fl">
+                                                        <ul class="styleTitleInfo">
+                                                            <li class="brandImg"><img src="http://localhost:8080/images/logo/{{style.imagename}}"/></li>
+                                                            <li>Style name : {{ style.name }}</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="fr">
+                                                        <a class="actionicon" ng-click="loadItemForm()" ng-class="formOpen ? 'active' : ''">
+                                                            <span class="glyphicon glyphicon-pencil"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div ng-class="formDisplay()" class="styleFormHolder clearfix">
+                                                    <div class="updateStyle">
+                                                        <form class="form-horizontal" name="form.updateForm" ng-submit="updateStyle(updatedStyle, product)">
+                                                            <div class="form-group">
+                                                                <label for="name" class="col-sm-2 control-label">Name</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="name" ng-model="updatedStyle.name">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="imagename" class="col-sm-2 control-label">Style Image</label>
+                                                                <div class="col-sm-4">
+                                                                    <input type="file" class="btn" name="imagename" ng-model="updatedStyle.imagename" accept="image/*" ngf-select required >
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <img ng-show="updatedStyle.imagename[0] != null" ngf-src="updatedStyle.imagename[0]" class="thumb">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="actions">
+                                                                <button type="submit" class="btn">Update</button>
+                                                                <button type="button" class="btn" ng-click="deleteStyle(style)">Delete</button>
+                                                                <button type="button" class="btn fr" ng-click="resetItemForm(style)">Cancel</button>
+
+                                                                <button type="button" class="btn fr" ng-click="enableStyle(updatedStyle)" ng-show="updatedStyle.visible == false">Enable</button>
+                                                                <button type="button" class="btn fr" ng-click="disableStyle(updatedStyle)" ng-show="updatedStyle.visible == true">Disable</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                    </div>
+                                </script>
+
+                                <li>
+                                    <a class="" ng-click="open('lg', product)">
+                                        <span>style management</span> <span class="glyphicon glyphicon-picture"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr">
+                            <a class="actionicon" ng-click="loadItemForm()" ng-class="formOpen ? 'active' : ''">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div ng-class="formDisplay()" class="productFormHolder clearfix">
+                        <div class="updateProduct">
+                            <form class="form-horizontal" name="form.updateForm" ng-submit="updateProduct(updatedProduct)">
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="name" ng-model="updatedProduct.name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="producttype" class="col-sm-2 control-label">Category</label>
+                                    <div class="col-sm-4">
+                                        <input type="hidden" ng-model="updatedProduct.producttype">
+                                        <input ng-init="updatedProduct.producttypevalue = product.producttype.name" type="text" ng-click="openCategoryModal('lg', updatedProduct)" class="form-control" name="producttype" ng-model="updatedProduct.producttypevalue" readonly="readonly">
+                                    </div>
+
+                                    <label for="brand" class="col-sm-2 control-label">Brand</label>
+                                    <div class="col-sm-4">
+                                        <select name="brand" class="form-control" ng-model="updatedProduct.brand.id" ng-options="brand.id as brand.name for brand in allBrands">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="code" class="col-sm-2 control-label">Code</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="code" ng-model="updatedProduct.code" >
+                                    </div>
+
+                                    <label for="weight" class="col-sm-2 control-label">Weight</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="weight" ng-model="updatedProduct.weight">
+                                    </div>
+
+                                    <label for="model" class="col-sm-2 control-label">Model</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="model" ng-model="updatedProduct.model">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="baseprice" class="col-sm-2 control-label">Base Price</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="baseprice" ng-model="updatedProduct.baseprice">
+                                    </div>
+
+                                    <label for="marketprice" class="col-sm-2 control-label">Market Price</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="marketprice" ng-model="updatedProduct.marketprice">
+                                    </div>
+
+                                    <label for="sellprice" class="col-sm-2 control-label">Sell Price</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" name="sellprice" ng-model="updatedProduct.sellprice">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-sm-2 control-label">Description</label>
+                                    <div class="col-sm-10">
+                                        <textarea bigeater-auto-expand class="form-control" ng-model="updatedProduct.description" placeholder=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="buyexplain" class="col-sm-2 control-label">Buy Explain</label>
+                                    <div class="col-sm-10">
+                                        <textarea bigeater-auto-expand class="form-control" ng-model="updatedProduct.buyexplain" placeholder=""></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="actions">
+                                    <button type="submit" class="btn">Update</button>
+                                    <button type="button" class="btn" ng-click="resetItemForm(product)">Cancel</button>
+                                    <button type="button" class="btn" ng-click="deleteProduct(product)">Delete</button>
+
+                                    <button class="fr btn" ng-click="discommendProduct(updatedProduct);updatedProduct.commend = false;" ng-if="updatedProduct.commend == true">Discommend</button>
+                                    <button class="fr btn" ng-click="commendProduct(updatedProduct);updatedProduct.commend = true;" ng-if="updatedProduct.commend == false">Commend</button>
+                                    <button class="fr btn" ng-click="disableProduct(updatedProduct);updatedProduct.visible = false;" ng-if="updatedProduct.visible == true">Disable</button>
+                                    <button class="fr btn" ng-click="enableProduct(updatedProduct);updatedProduct.visible = true;" ng-if="updatedProduct.visible == false">Enable</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>

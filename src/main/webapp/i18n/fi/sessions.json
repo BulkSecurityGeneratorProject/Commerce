@@ -1,0 +1,15 @@
+{
+    "sessions": {
+        "title": "Aktiivisten istuntojen [<b>{{username}}</b>]",
+        "table": {
+            "ipaddress": "IP osoite",
+            "useragent": "Käyttäjä Agentti",
+            "date": "päivämäärä",
+            "button": "Mitätöidä"
+        },
+        "messages": {
+            "success": "<strong>Istunto mitätöity!</strong>",
+            "error": "<strong>Tapahtui virhe!</strong> Istuntoa ei voida mitätöidä."
+        }
+    }
+}

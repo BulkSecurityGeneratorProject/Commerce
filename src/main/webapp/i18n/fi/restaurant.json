@@ -1,0 +1,19 @@
+{
+    "restaurant": {
+        "title": "ravintalo",
+        "products" : {
+            "products" : "Tuote",
+            "categories" : "Luokka",
+            "brands" : "Merkit"
+        },
+        "users" : {
+            "users" : "Käyttäjät"
+        },
+        "orders" : {
+            "orders" : "Tilaukset"
+        },
+        "comments" : {
+            "comments" : "Kommentit"
+        }
+    }
+}

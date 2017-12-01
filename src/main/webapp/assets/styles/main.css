@@ -1,0 +1,590 @@
+/****************************************/
+/* angularjs-ui-bootstrap installation 	*/
+/****************************************/
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+  cursor: pointer;
+}
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+/* ==========================================================================
+Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
+========================================================================== */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+/* ==========================================================================
+Developement Ribbon
+========================================================================== */
+.development {
+  position: absolute;
+  width: 149px;
+  height: 149px;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 1000;
+  background-image: url("../images/development_ribbon.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* ==========================================================================
+Version number in navbar
+========================================================================== */
+.navbar-version {
+  font-size: 10px;
+  color: #cccccc;
+}
+/* ==========================================================================
+Browser Upgrade Prompt
+========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+}
+.hero-unit h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.error {
+  color: white;
+  background-color: red;
+}
+.hipster {
+  display: inline-block;
+  width: 347px;
+  height: 497px;
+  background: url("../images/hipster.png") no-repeat center top;
+  background-size: contain;
+}
+.pad {
+  padding: 10px;
+}
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .hipster {
+    background: url("../images/hipster2x.png") no-repeat center top;
+    background-size: contain;
+  }
+}
+.hand {
+  cursor: pointer;
+}
+#threadDump .popover,
+#healthCheck .popover {
+  top: inherit;
+  display: block;
+  font-size: 10px;
+  max-width: 1024px;
+}
+#healthCheck .popover {
+  margin-left: -50px;
+}
+.health-details {
+  min-width: 400px;
+}
+.alert .popover pre {
+  font-size: 10px;
+}
+/*Custom alerts for notification*/
+.alerts {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  z-index: 1100;
+  right: 0px;
+  min-width: 200px;
+  padding: 5px;
+}
+.alerts .alert {
+  opacity: 0.9;
+  min-width: 60%;
+  text-overflow: ellipsis;
+  float: right;
+  z-index: 1100;
+}
+.alert pre {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+.voffset {
+  margin-top: 2px;
+}
+.voffset1 {
+  margin-top: 5px;
+}
+.voffset2 {
+  margin-top: 10px;
+}
+.voffset3 {
+  margin-top: 15px;
+}
+.voffset4 {
+  margin-top: 30px;
+}
+.voffset5 {
+  margin-top: 40px;
+}
+.voffset6 {
+  margin-top: 60px;
+}
+.voffset7 {
+  margin-top: 80px;
+}
+.voffset8 {
+  margin-top: 100px;
+}
+.voffset9 {
+  margin-top: 150px;
+}
+/* start Password strength bar style */
+ul#strengthBar {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+  vertical-align: 2px;
+}
+.point:last-child {
+  margin: 0 !important;
+}
+.point {
+  background: #DDD;
+  border-radius: 2px;
+  display: inline-block;
+  height: 5px;
+  margin-right: 1px;
+  width: 20px;
+}
+/* end Password strength bar style */
+.readonly {
+  background-color: #eee;
+  opacity: 1;
+}
+/**************************/
+/* variable  */
+/**************************/
+a {
+  cursor: pointer;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix {
+  clear: both;
+}
+.fixed {
+  position: fixed !important;
+  top: 0;
+}
+.crud form {
+  margin-top: 25px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/**********/
+/* toastr */
+/**********/
+.actionList {
+  float: right;
+}
+.actionList ul li {
+  float: right;
+  padding-left: 10px;
+}
+.actionList ul li:last-child {
+  padding-left: 0;
+}
+.well {
+  min-height: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+/**************************/
+/* shop Group & Category  */
+/**************************/
+.nodesControlAction {
+  height: 80px;
+  padding: 20px 0;
+}
+.angular-ui-tree-handle {
+  cursor: auto;
+  background: #f8faff;
+  border: 1px solid #dae2ea;
+  color: #7c9eb2;
+  padding: 10px 10px;
+}
+.angular-ui-tree-handle:hover {
+  color: #438eb9;
+  background: #f4f6f7;
+  border-color: #dce2e8;
+}
+.angular-ui-tree-placeholder {
+  background: #f0f9ff;
+  border: 2px dashed #bed2db;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.group-title {
+  background-color: #64B4C3!important;
+  color: #FFF !important;
+}
+/**************************/
+/* shop Module  */
+/**************************/
+.crud {
+  padding: 12.5px;
+}
+.btn_shopAdd {
+  font-size: 30px;
+}
+.Slide {
+  display: none;
+}
+.actions {
+  margin-top: 25px;
+}
+.sectionShopList {
+  margin: 12.5px 0;
+  border-top: 4px solid #cccccc;
+  word-wrap: break-word;
+}
+.sectionShopList li {
+  border-bottom: 1px solid #cccccc;
+  display: block;
+  zoom: 1;
+}
+.actionShopList {
+  display: block;
+  float: right;
+}
+.actionShopList li {
+  border-bottom: none;
+}
+.btn_shopEdit {
+  font-size: 20px;
+}
+.shopCreation {
+  font-size: 0.85em;
+  display: block;
+}
+.expire {
+  padding: 25px;
+  background: #eeeeee;
+}
+.detailPad {
+  margin: 25px;
+}
+.datePickDiv {
+  width: 300px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.shopTypeSelectDiv {
+  padding: 10px 0 0 0;
+}
+.shopActions {
+  margin: 25px 0;
+}
+.formHolder {
+  overflow: hidden;
+  width: 100%;
+}
+.formOpen {
+  max-height: 500px;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.formClosed {
+  max-height: 0;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+/* open datepicker button height */
+.input-group-btn button {
+  height: 34px;
+}
+/* exist shop datepicker width */
+ul.dropdown-menu.ng-valid {
+  width: 300px;
+}
+/*****************/
+/* HamburgerBar  */
+/*****************/
+.hamburgerBar {
+  position: absolute;
+  z-index: 500;
+  border: 1px solid #666666;
+  overflow: hidden;
+}
+.hamburgerButton {
+  font-size: 30px;
+  text-align: right;
+  margin-right: 10px;
+}
+.hamburgerButton a,
+.hamburgerButton a:hover {
+  color: #cccccc;
+}
+.navListOptions {
+  margin-top: 12.5px;
+  background: #cccccc;
+}
+.navListOptions li {
+  border-bottom: 1px solid #aaaaaa;
+  height: 50px;
+}
+.navListOptions li:hover,
+.navListOptions li:visited:hover {
+  background: #64b4c3;
+}
+.navListOptions li.active,
+.navListOptions li.active:hover {
+  background: #64b4c3;
+}
+.subNavIcon {
+  color: #19282b;
+}
+.subNavIcon span {
+  padding: 12.5px 0;
+  padding-left: 12.5px;
+  float: left;
+  font-size: 25px;
+  color: white;
+}
+.subNavIcon span.min {
+  height: 50px;
+  font-size: 18px;
+  overflow: hidden;
+}
+.subNavIcon p {
+  display: block;
+  padding-left: 12.5px;
+  padding-top: 12.5px;
+}
+.hamburgerBar.open {
+  width: 250px;
+}
+.hamburgerBar.closed {
+  width: 50px;
+}
+.hamburgerBar.closed .min {
+  display: none !important;
+}
+/* main content */
+.view {
+  padding: 48px 60px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  border: 3px solid #cccccc;
+}
+.view.open {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+}
+.view.closed {
+  margin-left: 60px;
+  width: calc(100% - 60px);
+}
+/*product page*/
+.btn_typeAdd {
+  font-size: 30px;
+}
+.btn_productAdd {
+  font-size: 30px;
+}
+.productFormHolder {
+  overflow: hidden;
+  width: 100%;
+}
+.sectionProductList {
+  margin: 12.5px 0;
+  border-top: 4px solid #cccccc;
+  word-wrap: break-word;
+}
+.sectionProductList li {
+  border-bottom: 1px solid #cccccc;
+  display: block;
+  zoom: 1;
+}
+/*product brand*/
+.brandContainer {
+  padding: 10px;
+  background: #F8FAFF;
+}
+.brandContainer .brandTitleInfo li {
+  color: #438EB9;
+  font-size: 11px;
+  border: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+.updateBrand {
+  margin: 20px 30px;
+}
+.brandFormHolder {
+  overflow: hidden;
+  width: 100%;
+}
+.brandImg img {
+  height: 50px;
+}
+/*product info*/
+.productContainer {
+  padding: 10px;
+  background: #F8FAFF;
+}
+.productContainer .productTitle {
+  display: block;
+  font-size: 16px;
+}
+.productContainer .productTitleInfo li {
+  font-size: 11px;
+  border: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+.productContainer span {
+  color: #438EB9;
+}
+.updateProduct {
+  margin: 20px 30px;
+}
+.actions {
+  margin: 25px 0;
+}
+/*product style*/
+.styleContainer {
+  padding: 10px;
+  background: #F8FAFF;
+}
+.styleContainer .styleTitleInfo li {
+  color: #438EB9;
+  font-size: 11px;
+  border: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+.updateStyle {
+  margin: 20px 30px;
+}
+.styleFormHolder {
+  overflow: hidden;
+  width: 100%;
+}
+.userHeaderBox {
+  background: #ffffff;
+}
+.userHeaderBox .clearfixer {
+  padding: 12.5px 0;
+}
+.tennancyUserList {
+  border-top: 4px solid #cccccc;
+  padding: 25px;
+}
+.tennancyUserList li {
+  background-clip: border-box;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 237.5px;
+  float: left;
+  position: relative;
+  height: 325px;
+}
+.tennancyUserList .userImage {
+  width: 100%;
+  height: 125px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 237.5px auto;
+  background-image: url('../images/images.jpg');
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.tennancyUserList .userInfo {
+  padding: 12.5px;
+}
+.tennancyUserList .userInfo h4 {
+  max-height: 60px;
+  overflow: hidden;
+}
+.tennancyUserList .userInfo .userEmail {
+  font-size: 0.85em;
+  position: relative;
+  height: 25px;
+}
+.tennancyUserList .userInfo .userEmail p {
+  overflow: hidden;
+}
+.tennancyUserList .userInfo .userEmail p:hover {
+  overflow: visible;
+  background: #ffffff;
+  position: absolute;
+  z-index: 9999;
+}
+.tennancyUserList .userInfo .userPerms {
+  margin-top: 12.5px;
+  text-transform: capitalize;
+  font-size: 0.85em;
+  color: #333333;
+}
+.tennancyUserList .userInfo .userPerms input {
+  margin: 0;
+}
+.tennancyUserList .userActions {
+  padding: 12.5px;
+  margin-top: 12.5px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

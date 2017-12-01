@@ -1,0 +1,19 @@
+{
+    "restaurant": {
+        "title": "餐厅",
+        "products" : {
+            "products" : "产品",
+            "categories" : "类别",
+            "brands" : "品牌"
+        },
+        "users" : {
+            "users" : "用户"
+        },
+        "orders" : {
+            "orders" : "订单"
+        },
+        "comments" : {
+            "comments" : "点评"
+        }
+    }
+}

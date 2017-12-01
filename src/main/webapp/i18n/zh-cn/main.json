@@ -1,0 +1,19 @@
+{
+    "main": {
+        "title": "欢迎， 饭桶！",
+        "subtitle": "这是您的饭桶主页",
+        "logged": {
+            "message": "您以 \"{{username}}\" 身份登录饭桶！"
+        },
+        "question": "如果你有任何问题关于饭桶：",
+        "link": {
+            "homepage": "饭桶官方网页",
+            "stackoverflow": "饭桶 Stack Overflow",
+            "bugtracker": "饭桶 bug tracker",
+            "chat": "饭桶公共交流区",
+            "contact": "联系 杨帆 yangfanfinland@gmail.com"
+        },
+        "like": "如果您喜欢饭桶，不要忘记给我们打分呕，地址",
+        "github": "Github"
+    }
+}

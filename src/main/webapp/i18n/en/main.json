@@ -1,0 +1,19 @@
+{
+    "main": {
+        "title": "Welcome, Big Eater!",
+        "subtitle": "This is your Big Eater homepage",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        },
+        "question": "If you have any question on Big Eater:",
+        "link": {
+            "homepage": "Big Eater homepage",
+            "stackoverflow": "Big Eater on Stack Overflow",
+            "bugtracker": "Big Eater bug tracker",
+            "chat": "Big Eater public chat room",
+            "contact": "contact Fan Yang yangfanfinland@gmail.com"
+        },
+        "like": "If you like Big Eater, don't forget to give us a star on",
+        "github": "Github"
+    }
+}

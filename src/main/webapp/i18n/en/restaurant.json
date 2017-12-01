@@ -1,0 +1,19 @@
+{
+    "restaurant": {
+        "title": "Restaurant",
+        "products" : {
+            "products" : "Products",
+            "categories" : "Categories",
+            "brands" : "Brands"
+        },
+        "users" : {
+            "users" : "Users"
+        },
+        "orders" : {
+            "orders" : "Orders"
+        },
+        "comments" : {
+            "comments" : "Comments"
+        }
+    }
+}

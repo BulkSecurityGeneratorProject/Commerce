@@ -1,0 +1,9 @@
+{
+    "activate": {
+        "title": "Aktivointi",
+        "messages": {
+            "success": "<strong>Käyttäjätunnuksesi on aktivoitu.</strong> Haluta <a href=\"#/login\">todentaa</a>.",
+            "error": "<strong>Käyttäjätunnuksesi ei voitu aktivoida.</strong> Käytä ilmoittautumislomake rekisteröityä."
+        }
+    }
+}

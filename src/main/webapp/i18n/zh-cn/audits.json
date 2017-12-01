@@ -1,0 +1,27 @@
+{
+    "audits": {
+        "title": "审计",
+        "filter": {
+            "title": "按日过滤",
+            "from": "从",
+            "to": "至",
+            "button": {
+                "weeks": "周",
+                "today": "今日",
+                "clear": "清空",
+                "close": "关闭"
+            }
+        },
+        "table": {
+            "header": {
+                "principal": "用户",
+                "date": "日期",
+                "status": "状态",
+                "data": "额外数据"
+            },
+            "data": {
+                "remoteAddress": "远程地址:"
+            }
+        }
+    }
+}

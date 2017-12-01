@@ -1,0 +1,11 @@
+{
+    "logs": {
+        "title": "日志",
+        "nbloggers": "总共 {{ total }} 条日志。",
+        "filter": "过滤器",
+        "table": {
+            "name": "名字",
+            "level": "级别"
+        }
+    }
+}

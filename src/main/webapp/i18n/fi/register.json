@@ -1,0 +1,24 @@
+{
+    "register": {
+        "title": "Rekisteröinti",
+        "form": {
+            "button": "Rekisteröidy"
+        },
+        "messages": {
+            "validate": {
+                "login": {
+                    "required": "Sisäänkirjautumisesi tarvitaan.",
+                    "minlength": "Kirjautumistietosi on oltava vähintään 1 merkki.",
+                    "maxlength": "Kirjautumistietosi voi olla enintään 50 merkkiä.",
+                    "pattern": "Kirjautumistietosi voi sisältää vain pieniä kirjaimia ja numeroita."
+                }
+            },
+            "success": "<strong>rekisteröinti tallennettu!</strong> Tarkista sähköpostisi vahvistusta.",
+            "error": {
+                "fail": "<strong>Rekisteröinti epäonnistui!</strong> Yritä uudelleen myöhemmin.",
+                "userexists": "<strong>Kirjaudu nimi jo rekisteröity!</strong>.",
+                "emailexists": "<strong>Sähköposti on jo käytössä!</strong>."
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "logs": {
+        "title": "Lokit",
+        "nbloggers": "Siellä on {{ total }} puunkorjuuta.",
+        "filter": "Suodatin",
+        "table": {
+            "name": "Nimi",
+            "level": "Taso"
+        }
+    }
+}

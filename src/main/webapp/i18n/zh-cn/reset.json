@@ -1,0 +1,30 @@
+{
+    "reset": {
+        "request": {
+            "title": "重置密码",
+            "form": {
+                "button": "重置"
+            },
+            "messages": {
+                "info": "输入您的用户名注册邮箱！",
+                "success": "查收邮件， 重置您的密码！",
+                "notfound": "<strong>邮箱没有被注册！</strong> 请重新检查。"
+
+            }
+
+        },
+        "finish" : {
+            "title": "重置密码",
+            "form": {
+                "button": "检测新密码"
+            },
+            "messages": {
+                "info": "选择新密码",
+                "success": "<strong>您的密码已被重置。</strong>请<a href=\"#/login\">鉴定</a>.",
+                "keymissing": "重置码缺失。",
+                "error": "您的密码重置失败，请记住密码重置有效期为24小时。"
+            }
+        }
+    }
+
+}

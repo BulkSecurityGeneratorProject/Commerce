@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "鉴定",
+        "form": {
+            "password": "密码",
+            "password.placeholder": "密码",
+            "rememberme": "自动登录",
+            "button": "鉴定"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>鉴定失败！</strong> 请确定您的资格，重新登录！"
+            }
+        },
+        "password" : {
+            "forgot": "忘记密码？"
+        }
+    }
+}

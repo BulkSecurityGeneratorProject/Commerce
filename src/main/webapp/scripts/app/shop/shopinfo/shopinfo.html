@@ -1,0 +1,120 @@
+<section ng-controller="BigEaterShops">
+    <div bigeater-single-collapse state="isCrudCollapsed">
+        <a class="btn_shopAdd" ng-click="isCrudCollapsed = false" ng-class="(isCrudCollapsed == false) ? 'active' : ''">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+        </a>
+        <div class="crud Slide">
+            <form ng-submit="createShop(newShop)" class="clearfixer" name="crudForm.createNewShop">
+                <input class="form-control" type="text" ng-model="newShop.name" placeholder="" maxlength="50" bigeater-focus="isCrudCollapsed">
+                <div class="clearfixer">
+                    <div class="fl datePickDiv">
+                        <label>Start date</label>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="yyyy-MM-dd" datepicker-popup="{{format}}" ng-model="newShop.startDate" datepicker-popup="{{'yyyy-MM-dd'}}" is-open="existingStartDate['idx-1']" datepicker-options="dateOptions" close-text="Close"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="setExistingStartDate($event,'-1')">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fl input-group datePickDiv">
+                        <label>End date</label>
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="yyyy-MM-dd" datepicker-popup="{{format}}" ng-model="newShop.endDate" datepicker-popup="{{'yyyy-MM-dd'}}" is-open="existingEndDate['idx-1']" min-date="minDate" datepicker-options="dateOptions" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="setExistingEndDate($event,'-1')">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group clearfix shopTypeSelectDiv">
+                    <label>Shop Category</label>
+                    <!--
+                                1 为 category id, 在数据库中为Restaurant下的 Chinese.
+            			给shop form字段赋予默认值，shop category的默认值为Restaurant - Thai
+            		-->
+                    <select class="form-control" ng-init="newShop.shopCategory = 1" ng-model="newShop.shopCategory" ng-options="category.id as category.name group by category.group for category in categories">
+                    </select>
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn">Add</button>
+                    <button type="button" class="btn" ng-click="resetCreateForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <ul bigeater-accordion class="sectionShopList">
+        <li
+            bigeater-accordion-item
+            ng-repeat="shop in shopsobj.shops"
+            ng-init="updatedShop.id = shop.id; updatedShop.name = shop.name; updatedShop.startDate = shop.startDate; updatedShop.endDate = shop.endDate;
+        			 updatedShop.address = shop.address; updatedShop.description = shop.description; updatedShop.visible = shop.visible;
+        			 updatedShop.id = shop.id; updatedShop.shopCategory = shop.shopCategory"
+            ng-controller="BigEaterShopsItem">
+            <div class="clearfix expire">
+                <div class="fl">
+                    <span class="shopCreation">Created on {{shop.createdate}}</span>
+                    <a ng-href="#/shop/{{shop.id}}">{{shop.name}}</a>
+                </div>
+                <ul class="actionShopList">
+                    <li>
+                        <a class="btn_shopEdit" ng-click="loadItemForm()" ng-class="(formOpen == true) ? 'active' : ''">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div ng-class="formDisplay()" class="formHolder">
+                <div class="detailPad">
+                    <form name="form.updateForm">
+                        <input type="hidden">
+                        <div>
+                            <input class="form-control" type="text" name="name" ng-model="updatedShop.name" maxlength="50">
+                        </div>
+                        <div class="clearfixer">
+                            <div class="fl datePickDiv">
+                                <label>Date from</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="yyyy-MM-dd" name="startDate" datepicker-popup="{{format}}" ng-model="updatedShop.startDate" datepicker-popup="{{'yyyy-MM-dd'}}" is-open="existingStartDate['idx'+$index]" datepicker-options="dateOptions" ng-required="true" close-text="Close" datepicker-append-to-body="true"/>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="setExistingStartDate($event,$index)">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="fl input-group datePickDiv">
+                                <label>to end of</label>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="yyyy-MM-dd" name="endDate" datepicker-popup="{{format}}" ng-model="updatedShop.endDate" datepicker-popup="{{'yyyy-MM-dd'}}" is-open="existingEndDate['idx'+$index]" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" datepicker-append-to-body="true"/>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="setExistingEndDate($event,$index)">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix input-group shopTypeSelectDiv">
+                            <label>Shop Category</label>
+                            <select class="form-control" ng-model="updatedShop.shopCategory" ng-options="category.id as category.name group by category.group for category in categories">
+                            </select>
+                        </div>
+
+                        <button class="fr btn" ng-click="resetItemForm(shop)" ng-disabled="disabled">Cancel</button>
+                        <button class="fr btn" ng-click="disableShop(shop)" ng-disabled="disabled" ng-if="shop.visible == true">Disable</button>
+                        <button class="fr btn" ng-click="enableShop(shop)" ng-disabled="disabled" ng-if="shop.visible == false">Enable</button>
+
+                        <div class="shopActions fl">
+                            <button class="btn" ng-click="deleteShop(shop)" ng-disabled="disabled">Delete</button>
+                            <button class="btn" ng-click="editShop(updatedShop)" ng-disabled="disabled">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>

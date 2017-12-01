@@ -1,0 +1,15 @@
+{
+    "sessions": {
+        "title": "激活[<b>{{username}}</b>]对话",
+        "table": {
+            "ipaddress": "IP地址",
+            "useragent": "用户代理",
+            "date": "日期",
+            "button": "无效"
+        },
+        "messages": {
+            "success": "<strong>对话无效！</strong>",
+            "error": "<strong>发生错误！</strong> 该对话设置无效失败。"
+        }
+    }
+}

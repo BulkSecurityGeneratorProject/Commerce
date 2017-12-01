@@ -1,0 +1,117 @@
+{
+    "global": {
+        "title": "饭桶",
+        "browsehappy": "您正在使用 <strong>过期的</strong> 浏览器。请 <a href=\"http://browsehappy.com/?locale=zh-CN\">更新您的浏览器</a> 以提升您的体验。",
+        "menu": {
+            "home": "首页",
+            "entities": {
+                "main": "实体",
+                "additionalEntity": "JHipster will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "账户",
+                "settings": "设置",
+                "password": "密码",
+                "sessions": "对话",
+                "login": "鉴定",
+                "logout": "退出",
+                "register": "注册"
+            },
+            "admin": {
+                "main": "管理",
+                "tracker": "用户追踪",
+                "metrics": "度量",
+                "health": "健康",
+                "configuration": "配置",
+                "logs": "日志",
+                "audits": "审计",
+                "apidocs": "应用程序界面",
+                "database": "数据库"
+            },
+            "shop": {
+                "main": "商店",
+                "group": "分组",
+                "shopinfo": "商店信息",
+                "restaurant": "餐厅"
+            },
+            "language": "语言"
+        },
+        "form": {
+            "username": "用户名",
+            "username.placeholder": "用户名",
+            "newpassword": "密码",
+            "newpassword.placeholder": "密码",
+            "confirmpassword": "密码确认",
+            "confirmpassword.placeholder": "密码确认",
+            "email": "邮箱",
+            "email.placeholder": "邮箱"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "如果您想 <a href=\"#/login\">鉴定</a>, 您可以使用默认账户:<br/>- 管理员 (用户名=\"admin\" 和 密码=\"admin\") <br/>- 普通用户 (用户名=\"user\" 和 密码=\"user\").",
+                "register": "您还没有账户？<a href=\"#/register\">注册一个新的账户</a>"
+            },
+            "error": {
+                "dontmatch" : "密码和密码确认不匹配！"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "密码为必填项。",
+                    "minlength": "密码长度须大于5。",
+                    "maxlength": "密码长度须小于50。",
+                    "strength": "密码强度:"
+                },
+                "confirmpassword": {
+                    "required": "确认密码为必填项。",
+                    "minlength": "确认密码长度须大于5。",
+                    "maxlength": "确认密码长度须小于50。"
+                },
+                "email": {
+                    "required": "邮箱为必填项。",
+                    "invalid": "非法邮箱。",
+                    "minlength": "邮箱长度须大于5。",
+                    "maxlength": "邮箱长度须小于50。"
+                }
+            }
+        },
+        "field": {
+            "id" : "身份证"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "添加 blob",
+            "addimage": "添加图片",
+            "back": "返回",
+            "cancel": "取消",
+            "delete": "删除",
+            "edit": "修改",
+            "save": "保存",
+            "view": "查看"
+        },
+        "detail": {
+            "field": "字段",
+            "value": "值"
+        },
+        "delete": {
+            "title": "确认删除操作"
+        },
+        "validation": {
+            "required": "该字段为必填项",
+            "minlength": "该字段须大于{{min}}字符",
+            "maxlength": "该字段须小于{{max}}字符",
+            "min": "该字段须大于{{min}}",
+            "max": "该字段须小于{{max}}",
+            "minbytes": "该字段须大于{{min}}字节",
+            "maxbytes": "该字段须小于{{max}}字节",
+            "pattern": "该字段须满足模型{{pattern}}",
+            "number": "该字段须为数字",
+            "datetimelocal": "该字段须为日期和时间"
+        }
+    },
+    "error" : {
+        "serverNotReachable" : "无法访问服务器。",
+        "NotNull" : "字段{{fieldName}}不能为空"
+    },
+    "footer": "这是网页底部"
+}

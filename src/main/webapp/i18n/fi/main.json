@@ -1,0 +1,19 @@
+{
+    "main": {
+        "title": "Tervetuloa, Big Eater!",
+        "subtitle": "Tämä on kotisivu",
+        "logged": {
+            "message": "Olet kirjautunut sisään käyttäjätunnuksella \"{{username}}\"."
+        },
+        "question": "Jos sinulla on kysymys Big Eater",
+        "link": {
+            "homepage": "Big Eater JHipster kotisivu",
+            "stackoverflow": "Big Eater Stack Overflow",
+            "bugtracker": "Big Eater bug tracker",
+            "chat": "Big Eater chattihuone",
+            "contact": "yhteyshenkilö Fan Yang yangfanfinland@gmail.com"
+        },
+        "like": "Jos pidät Big Eater, älä unohda antaa meille tähti",
+        "github": "Github"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "settings": {
+        "title": "[<b>{{username}}</b>] 用户设置",
+        "form": {
+            "firstname": "名",
+            "firstname.placeholder": "名",
+            "lastname": "姓",
+            "lastname.placeholder": "姓",
+            "language": "语言",
+            "button": "保存"
+        },
+        "messages": {
+            "error": {
+                "fail": "<strong>发生错误!</strong> 设置保存失败。",
+                "emailexists": "<strong>邮箱已被占用！</strong>"
+            },
+            "success": "<strong>设置保存失败!</strong>",
+            "validate": {
+                "firstname": {
+                    "required": "名为必填项。",
+                    "minlength": "名须大于1个字符。",
+                    "maxlength": "名须小于50个字符。"
+                },
+                "lastname": {
+                    "required": "姓为必填项。",
+                    "minlength": "姓须大于1个字符。",
+                    "maxlength": "姓须小于50个字符。"
+                }
+            }
+        }
+    }
+}

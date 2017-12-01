@@ -1,0 +1,53 @@
+/****************************************/
+/* angularjs-ui-bootstrap installation 	*/
+/****************************************/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+//Colors
+@cWhite: #fff;
+@cBlack: #000;
+@cGrey0: #eee;
+@cGrey1: #ccc;
+@cGrey2: #aaa;
+@cGrey3: #666;
+@cGrey4: #333;
+@cBigEaterGrey: #465051;
+@cBigEaterBlack: #19282B;
+
+@cAction: #224A51;
+.dsAction(@cAction);
+@cActionDark: @dsAction;
+@cActive: #64B4C3;
+.dsActive(@cActive);
+@cActiveDark: @dsActive;
+
+//Padding/Margins
+@sp1: 25px;
+@sp2: @sp1*2;
+@sp05: @sp1/2;
+@sp025: @sp1/4;
+@sp0125: @sp1/8;
+
+
+@fsSmall: .85em;
+@fsLarge: 1.15em;
+
+@cUnit: 6px;
+@userImage: 200px + @sp1 + @sp05;
+
+// MIXINS
+.dsAction(@color) {
+    @dark: darken(@color, 10%);
+    @dsAction: desaturate(@dark, 20%);
+}
+.dsActive(@color) {
+    @dark: darken(@color, 10%);
+    @dsActive: desaturate(@dark, 20%);
+}
+
+.gradient(@color1, @color2) {
+    background: -webkit-linear-gradient(@color1, @color2);
+    background: -o-linear-gradient(@color1, @color2);
+    background: -moz-linear-gradient(@color1, @color2);
+    background: linear-gradient(@color1,@color2);
+}
